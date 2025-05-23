@@ -35,6 +35,9 @@ func Parse(reader *bufio.Reader) (interface{}, error) {
 	}
 }
 
+
+// Parsing Integer
+
 func parseInteger(reader *bufio.Reader) (int64, error) {
 	// Read until 'e'
 	strBytes, err := reader.ReadBytes('e')
@@ -66,6 +69,9 @@ func parseInteger(reader *bufio.Reader) (int64, error) {
 	}
 	return val, nil
 }
+
+
+// Parsing String
 
 func parseString(reader *bufio.Reader) (string, error) {
 	// Read length part until ':'
@@ -101,6 +107,9 @@ func parseString(reader *bufio.Reader) (string, error) {
 	return string(buf), nil
 }
 
+
+// Parsing List
+
 func parseList(reader *bufio.Reader) ([]interface{}, error) {
 	var list []interface{}
 	for {
@@ -126,6 +135,9 @@ func parseList(reader *bufio.Reader) ([]interface{}, error) {
 		list = append(list, item)
 	}
 }
+
+
+// Parsing Dictionary
 
 func parseDictionary(reader *bufio.Reader) (map[string]interface{}, error) {
 	dict := make(map[string]interface{})
