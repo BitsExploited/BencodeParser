@@ -13,9 +13,9 @@ func main() {
 	intData := "i3e"
 	parsedInt, err := bencode.ParseString(intData)
 	if err != nil {
-		fmt.Printf("Error parsing integer '%s'': %v", intData, err)
+		fmt.Printf("Error parsing integer '%s'': %v\n", intData, err)
 	} else {
-		fmt.Printf("The parsed integer from '%s' : %v (Type: %T)", intData, parsedInt, parsedInt)
+		fmt.Printf("The parsed integer from '%s' : %v (Type: %T)\n", intData, parsedInt, parsedInt)
 	}
 	intDataNeg := "i-7e"
 	parsedIntNeg, err := bencode.ParseString(intDataNeg)
